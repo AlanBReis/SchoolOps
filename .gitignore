@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+
+# Ambiente Virtual
+venv/
+.env
+
+# Docker
+*.tar
+*.log
+
+# IDEs e editores de texto
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Configurações de sistema
+*.iml
