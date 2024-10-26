@@ -1,5 +1,7 @@
 # SchoolOps
 
+![Pipeline Status](https://github.com/AlanBReis/ci-cd-aws-deploy/workflows/Workflow%20deploy/badge.svg)
+
 ![Sistema em Ação](https://user-images.githubusercontent.com/74038190/213910842-5a320d6b-e48f-4d41-a901-0e6a357e8dae.gif)
 
 
@@ -24,6 +26,10 @@ Com o School Ops, você poderá explorar a integração de tecnologias modernas 
 - Gestão de Alunos, Professores, Disciplinas e Notas
 - Sistema de Frequência e Matrículas
 
+## Atualizações no Frontend
+
+Foi adicionado um frontend básico em HTML, CSS e JavaScript, permitindo acesso à interface de gerenciamento escolar. Este frontend ainda está em desenvolvimento e futuras melhorias de design e funcionalidades estão planejadas.
+
 
 ## Executando o Projeto
 
@@ -37,8 +43,5 @@ Com o School Ops, você poderá explorar a integração de tecnologias modernas 
 1. Clonar o repositório.
 2. Executar o Terraform para provisionar o cluster.
 3. Configurar o deploy via GitHub Actions.
-
-
----
 
 
