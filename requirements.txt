@@ -7,3 +7,4 @@ MarkupSafe==3.0.2
 Werkzeug==3.0.6
 flask-cors  # Se precisar habilitar CORS
 psycopg2-binary  # Para conectar ao PostgreSQL
+pytest

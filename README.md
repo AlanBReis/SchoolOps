@@ -2,7 +2,10 @@
 
 ![Sistema em Ação](https://user-images.githubusercontent.com/74038190/213910842-5a320d6b-e48f-4d41-a901-0e6a357e8dae.gif)
 
-School Ops é um projeto de exemplo para gestão de escolas, criado para demonstrar práticas e ferramentas DevOps em uma infraestrutura de cloud computing. Ele fornece uma API básica para gerenciar alunos, notas, frequência e matrículas.
+
+School Ops é um projeto de exemplo voltado para a gestão escolar, desenvolvido para ilustrar práticas e ferramentas de DevOps em uma infraestrutura de cloud computing. Este projeto oferece uma API básica que permite gerenciar informações essenciais, como alunos, notas, frequência e matrículas.
+
+Com o School Ops, você poderá explorar a integração de tecnologias modernas e a implementação de melhores práticas no desenvolvimento e na operação de aplicações, proporcionando uma experiência educacional mais eficiente e acessível.
 
 
 ## Arquitetura e Ferramentas Utilizadas
