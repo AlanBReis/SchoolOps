@@ -3,21 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Professores</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cadastro de Professores - School Ops</title>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Cadastro de Professores</h1>
-        <form id="teacher-form">
-            <label for="teacher-name">Nome:</label>
-            <input type="text" id="teacher-name" required>
-            <label for="teacher-subject">Disciplina:</label>
-            <input type="text" id="teacher-subject" required>
+    </header>
+    
+    <main>
+        <form id="teacherForm">
+            <label for="cod_professor">Código do Professor:</label>
+            <input type="number" id="cod_professor" required>
+            
+            <label for="nome_professor">Nome:</label>
+            <input type="text" id="nome_professor" required>
+            
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" required>
+            
+            <label for="disciplina">Disciplina:</label>
+            <input type="text" id="disciplina" required>
+            
             <button type="submit">Cadastrar Professor</button>
         </form>
-        <a href="index.html">Voltar para o Dashboard</a>
-    </div>
-    <script src="script.js"></script>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 School Ops. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('teacherForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const data = {
+                cod_professor: parseInt(document.getElementById('cod_professor').value),
+                nome_professor: document.getElementById('nome_professor').value,
+                idade: parseInt(document.getElementById('idade').value),
+                disciplina: document.getElementById('disciplina').value
+            };
+
+            const response = await fetch('http://localhost:5000/api/professores', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Professor cadastrado com sucesso!');
+                document.getElementById('teacherForm').reset();
+            } else {
+                alert('Erro ao cadastrar professor.');
+            }
+        });
+    </script>
 </body>
 </html>
