@@ -5,9 +5,7 @@
 ![Sistema em Ação](https://user-images.githubusercontent.com/74038190/213910842-5a320d6b-e48f-4d41-a901-0e6a357e8dae.gif)
 
 
-School Ops é um projeto de exemplo voltado para a gestão escolar, desenvolvido para ilustrar práticas e ferramentas de DevOps em uma infraestrutura de cloud computing. Este projeto oferece uma API básica que permite gerenciar informações essenciais, como alunos, notas, frequência e matrículas.
-
-Com o School Ops, você poderá explorar a integração de tecnologias modernas e a implementação de melhores práticas no desenvolvimento e na operação de aplicações, proporcionando uma experiência educacional mais eficiente e acessível.
+O SchoolOps foi criado para facilitar a gestão escolar, permitindo que instituições de ensino gerenciem informações de alunos, professores e frequência de forma eficiente. Através da integração de tecnologias modernas, o projeto demonstra como construir uma aplicação escalável e de fácil manutenção.
 
 
 ## Arquitetura e Ferramentas Utilizadas
@@ -19,19 +17,16 @@ Com o School Ops, você poderá explorar a integração de tecnologias modernas 
 - **Ansible**: Automação de configuração e gerenciamento de dependências.
 - **New Relic**: Monitoramento e observabilidade para garantir a saúde e desempenho do sistema.
 - **GitHub Actions**: CI/CD para integração contínua e deploy contínuo.
+- **Flask**: Framework para desenvolvimento de aplicações web.
+- **PostgreSQL**: Banco de dados relacional.
+- **HTML/CSS/JavaScript**: Tecnologias para o frontend.
+
 
 ## Funcionalidades da API
 
 - Autenticação de usuários
 - Gestão de Alunos, Professores, Disciplinas e Notas
 - Sistema de Frequência e Matrículas
-
-## Atualizações no Frontend
-
-Foi adicionado um frontend básico em HTML, CSS e JavaScript, permitindo acesso à interface de gerenciamento escolar. Este frontend ainda está em desenvolvimento e futuras melhorias de design e funcionalidades estão planejadas.
-
-
-## Executando o Projeto
 
 ### Pré-requisitos
 - Docker e Docker Compose
@@ -45,3 +40,6 @@ Foi adicionado um frontend básico em HTML, CSS e JavaScript, permitindo acesso 
 3. Configurar o deploy via GitHub Actions.
 
 
+## Licença
+
+Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
