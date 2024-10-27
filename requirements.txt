@@ -8,3 +8,7 @@ Werkzeug==3.0.6
 flask-cors  # Se precisar habilitar CORS
 psycopg2-binary  # Para conectar ao PostgreSQL
 pytest
+Flask
+Flask-SQLAlchemy
+python-dotenv==1.0.0
+python-dotenv

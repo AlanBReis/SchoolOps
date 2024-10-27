@@ -1,0 +1,9 @@
+version: '3.8' 
+
+services:
+  web:
+    build: .  
+    ports:
+      - "5001:5000"  
+    working_dir: /app/backend  
+    command: python app.py
