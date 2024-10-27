@@ -12,6 +12,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: schoolops_db
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: Soad182
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -25,6 +40,10 @@ jobs:
         run: |
           pip install -r requirements.txt
       
+      - name: Set environment variables
+        run: |
+          echo "SQLALCHEMY_DATABASE_URI=postgresql://postgres:Soad182@localhost:5432/schoolops_db" >> $GITHUB_ENV
+
       - name: Run tests
         run: |
           pytest
