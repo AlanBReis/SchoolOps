@@ -1,63 +1,86 @@
+html, body {
+    height: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f0f0f5;
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-}
-
-form {
-    margin: 20px 0;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="number"],
-button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-button {
-    background-color: #28a745;
+header {
+    background: #4CAF50;
     color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-a {
-    display: block;
+    padding: 20px;
     text-align: center;
-    margin-top: 20px;
-    color: #007bff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+.welcome-section {
+    text-align: center;
+    padding: 20px;
+    background: #e7f5e9;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#students-list {
-    margin-top: 20px;
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.dashboard-item {
+    background: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #4CAF50;
+    transition: background 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-item:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+footer h3 {
+    margin: 0 0 10px;
 }
