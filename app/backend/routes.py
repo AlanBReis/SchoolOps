@@ -1,6 +1,6 @@
 # app/backend/routes.py
 from flask import Blueprint, request, jsonify
-from .models import db, Aluno, Professor, Funcionario
+from models import db, Aluno, Professor, Funcionario
 
 bp = Blueprint('api', __name__)
 

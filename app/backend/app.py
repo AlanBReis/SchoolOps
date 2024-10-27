@@ -1,11 +1,11 @@
 # app/backend/app.py
 import os
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
-from .models import db
-from .routes import bp
+from models import db
+from routes import bp
 from flask_cors import CORS
+from flask import *
 
 
 # Carrega as variáveis do arquivo .env
@@ -28,7 +28,7 @@ app.register_blueprint(bp, url_prefix='/api')
 
 @app.route('/')
 def hello():
-    return "Hello, SchoolOps!"
+    return render_template('index.html')
 
 if __name__ == '__main__':
     with app.app_context():

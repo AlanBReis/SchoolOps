@@ -1,9 +1,23 @@
-version: '3.8' 
-
 services:
-  web:
-    build: .  
+  schoolops_db:
+    image: postgres:latest
+    restart: always
+    env_file: 
+      - app\backend\.env
+    volumes:
+      - postgres_schoolops:/var/lib/postgresql/data     
+      - ./app/backend/init.sql:/docker-entrypoint-initdb.d/init.sql  # Certifique-se do caminho
+
+  schoolops:
+    restart: always
+    build: .
+    depends_on:
+      - schoolops_db
+    env_file:
+      - app\backend\.env
     ports:
       - "5001:5000"  
-    working_dir: /app/backend  
-    command: python app.py
+    working_dir: /app/backend
+
+volumes:
+  postgres_schoolops:
