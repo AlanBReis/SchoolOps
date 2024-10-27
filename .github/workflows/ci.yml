@@ -42,7 +42,7 @@ jobs:
       
       - name: Set environment variables
         run: |
-          echo "SQLALCHEMY_DATABASE_URI=postgresql://postgres:Soad182@localhost:5432/schoolops_db" >> $GITHUB_ENV
+          echo "DATABASE_URL=postgresql://postgres:Soad182@localhost:5432/schoolops_db" >> $GITHUB_ENV
 
       - name: Run tests
         run: |
