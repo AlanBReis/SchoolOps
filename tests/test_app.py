@@ -1,5 +1,9 @@
+import os
+os.environ['FLASK_ENV'] = 'testing'  # Define o ambiente como 'testing'
+
 import pytest
 from app.backend.app import app  # Certifique-se de que o caminho esteja correto
+
 
 @pytest.fixture
 def client():

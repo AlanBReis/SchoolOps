@@ -1,18 +1,19 @@
-from flask import Flask, jsonify
+# app/backend/app.py
+import os
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
-import os
 
-# Carrega as variáveis de ambiente do arquivo .env
-load_dotenv()
+load_dotenv()  # Carrega as variáveis de ambiente do .env
 
 app = Flask(__name__)
 
-# Configuração do banco de dados
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# Use uma URL de banco de dados específica para testes
+if os.getenv('FLASK_ENV') == 'testing':
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'  # Banco de dados em memória para testes
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
-# Inicializa o SQLAlchemy
 db = SQLAlchemy(app)
 
 # Modelo de Aluno
