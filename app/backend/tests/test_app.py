@@ -1,6 +1,6 @@
 import os
 import pytest
-from app.backend.app import app  
+from app import app
 
 # Define o ambiente como 'testing'
 os.environ['FLASK_ENV'] = 'testing'

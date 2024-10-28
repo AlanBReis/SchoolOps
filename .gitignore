@@ -27,3 +27,7 @@ Thumbs.db
 
 # Configurações de sistema
 *.iml
+
+.terraform
+.tfstate
+.lock
