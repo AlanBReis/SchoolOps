@@ -5,7 +5,7 @@ document.getElementById('student-form')?.addEventListener('submit', async (event
     const name = document.getElementById('name').value;
     const grade = document.getElementById('grade').value;
 
-    const response = await fetch('http://localhost:5000/api/students', {
+    const response = await fetch('http://localhost:5001/api/students', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -15,7 +15,7 @@ document.getElementById('student-form')?.addEventListener('submit', async (event
 
     if (response.ok) {
         alert('Aluno cadastrado com sucesso!');
-        document.getElementById('student-form').reset(); // Limpa o formulário
+        document.getElementById('student-form').reset(); 
     } else {
         alert('Erro ao cadastrar aluno.');
     }
@@ -28,7 +28,7 @@ document.getElementById('teacher-form')?.addEventListener('submit', async (event
     const name = document.getElementById('teacher-name').value;
     const subject = document.getElementById('teacher-subject').value;
 
-    const response = await fetch('http://localhost:5000/api/teachers', {
+    const response = await fetch('http://localhost:5001/api/teachers', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ document.getElementById('teacher-form')?.addEventListener('submit', async (event
 
     if (response.ok) {
         alert('Professor cadastrado com sucesso!');
-        document.getElementById('teacher-form').reset(); // Limpa o formulário
+        document.getElementById('teacher-form').reset();
     } else {
         alert('Erro ao cadastrar professor.');
     }
@@ -46,11 +46,11 @@ document.getElementById('teacher-form')?.addEventListener('submit', async (event
 
 // Função para buscar e exibir alunos na página de lista
 async function fetchStudents() {
-    const response = await fetch('http://localhost:5000/api/students');
+    const response = await fetch('http://localhost:5001/api/students');
     const students = await response.json();
     const studentsList = document.getElementById('students-list');
     
-    studentsList.innerHTML = ''; // Limpa a lista anterior
+    studentsList.innerHTML = ''; 
     students.forEach(student => {
         const studentItem = document.createElement('div');
         studentItem.textContent = `${student.name} - Nota: ${student.grade}`;
@@ -60,7 +60,7 @@ async function fetchStudents() {
 
 // Função para buscar e exibir professores na página de lista
 async function fetchTeachers() {
-    const response = await fetch('http://localhost:5000/api/teachers');
+    const response = await fetch('http://localhost:5001/api/teachers');
     const teachers = await response.json();
     const teachersList = document.getElementById('teachers-list');
     

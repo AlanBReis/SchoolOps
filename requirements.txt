@@ -8,6 +8,5 @@ Werkzeug
 flask-cors  
 psycopg2-binary  
 pytest
-Flask
 Flask-SQLAlchemy
 python-dotenv

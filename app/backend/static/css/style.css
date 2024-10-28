@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background: #4CAF50;
+    background: #4c5baf;
     color: white;
     padding: 20px;
     text-align: center;
@@ -57,18 +57,18 @@ main {
 
 .dashboard-item {
     background: #fff;
-    border: 2px solid #4CAF50;
+    border: 2px solid #4c6faf;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
     text-decoration: none;
-    color: #4CAF50;
+    color: #4c5baf;
     transition: background 0.3s, color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-item:hover {
-    background: #4CAF50;
+    background: #4c5baf;
     color: white;
 }
 

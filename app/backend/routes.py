@@ -1,8 +1,37 @@
-# app/backend/routes.py
 from flask import Blueprint, request, jsonify
-from models import db, Aluno, Professor, Funcionario
+from models import db, Aluno, Professor, Funcionario , User
+from datetime import datetime
 
 bp = Blueprint('api', __name__)
+
+# Rotas de usuário
+@bp.route('/register', methods=['POST'])
+def register():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    if User.query.filter_by(username=username).first():
+        return jsonify({'message': 'Usuário já existe!'}), 400
+
+    new_user = User(username=username)
+    new_user.set_password(password)
+    db.session.add(new_user)
+    db.session.commit()
+
+    return jsonify({'message': 'Usuário cadastrado com sucesso!'}), 201
+
+@bp.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    user = User.query.filter_by(username=username).first()
+    if user and user.check_password(password):
+        return jsonify({'message': 'Login bem-sucedido!'}), 200
+    else:
+        return jsonify({'message': 'Usuário ou senha incorretos!'}), 401
 
 # Rotas para Aluno
 @bp.route('/alunos', methods=['POST'])

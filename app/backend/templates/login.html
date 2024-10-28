@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>School Ops</title>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h1>Bem-vindo ao School Ops</h1>
+        <form id="loginForm" aria-label="Formulário de Login">
+            <div class="input-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" required aria-required="true">
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required aria-required="true">
+            </div>
+            <button type="submit">Conectar</button>
+            <button type="button" id="registerToggle">Cadastrar</button>
+        </form>
+    </div>
+
+    <div class="container" id="registerContainer" style="display: none;">
+        <h1>Cadastrar</h1>
+        <form id="registerForm" aria-label="Formulário de Registro">
+            <div class="input-group">
+                <label for="newUsername">Login:</label>
+                <input type="text" id="newUsername" required aria-required="true">
+            </div>
+            <div class="input-group">
+                <label for="newPassword">Senha:</label>
+                <input type="password" id="newPassword" required aria-required="true">
+            </div>
+            <button type="submit">Cadastrar</button>
+            <button type="button" id="loginToggle">Voltar para Login</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

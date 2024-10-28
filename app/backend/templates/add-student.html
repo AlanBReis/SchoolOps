@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add-student.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Cadastro de Alunos - School Ops</title>
 </head>
 <body>
@@ -30,38 +31,17 @@
             
             <button type="submit">Cadastrar Aluno</button>
         </form>
+
+        <button id="showStudentListButton">Mostrar Alunos Cadastrados</button> <!-- Botão para mostrar a lista -->
+        <ul id="studentList" style="display: none;"></ul>  <!-- Lista oculta inicialmente -->
+        
     </main>
 
     <footer>
         <p>&copy; 2024 School Ops. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        document.getElementById('studentForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const data = {
-                cod_cliente: parseInt(document.getElementById('cod_cliente').value),
-                nome_aluno: document.getElementById('nome_aluno').value,
-                idade: parseInt(document.getElementById('idade').value),
-                nota: document.getElementById('nota').value ? parseInt(document.getElementById('nota').value) : null,
-                frequencia: parseInt(document.getElementById('frequencia').value)
-            };
-
-            const response = await fetch('http://localhost:5000/api/alunos', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (response.ok) {
-                alert('Aluno cadastrado com sucesso!');
-                document.getElementById('studentForm').reset();
-            } else {
-                alert('Erro ao cadastrar aluno.');
-            }
-        });
-    </script>
+    <!-- Referência ao arquivo JavaScript -->
+    <script src="{{ url_for('static', filename='js/add-student.js') }}"></script>
 </body>
 </html>

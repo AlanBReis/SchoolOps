@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add-teachers.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Cadastro de Professores - School Ops</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Professores</h1>
+    </header>
+    
+    <main>
+        <form id="teacherForm">
+            <label for="cod_professor">Código do Professor:</label>
+            <input type="number" id="cod_professor" required>
+
+            <label for="nome_professor">Nome Completo:</label>
+            <input type="text" id="nome_professor" required>
+            
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" required>
+            
+            <label for="disciplina">Disciplinas:</label>
+            <input type="text" id="disciplina">
+            
+            <button type="submit">Cadastrar Professor</button>
+        </form>
+        
+        <button id="showTeacherListButton">Mostrar Professores Cadastrados</button>
+        <ul id="teacherList" style="display: none;"></ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 School Ops. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Mover o script para o final do body -->
+    <script src="{{ url_for('static', filename='js/add-teachers.js') }}"></script>
+</body>
+</html>

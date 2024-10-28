@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add-employee.css') }}">
     <title>Cadastro de Funcionários - School Ops</title>
 </head>
 <body>
@@ -27,37 +28,15 @@
             
             <button type="submit">Cadastrar Funcionário</button>
         </form>
+
+        <button id="showEmployeeListButton">Mostrar Funcionários Cadastrados</button>
+        <ul id="employeeList" style="display: none;"></ul>  <!-- Lista oculta inicialmente -->
     </main>
 
     <footer>
         <p>&copy; 2024 School Ops. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        document.getElementById('employeeForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const data = {
-                cod_funcionario: parseInt(document.getElementById('cod_funcionario').value),
-                nome_funcionario: document.getElementById('nome_funcionario').value,
-                idade: parseInt(document.getElementById('idade').value),
-                funcao: document.getElementById('funcao').value
-            };
-
-            const response = await fetch('http://localhost:5000/api/funcionarios', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (response.ok) {
-                alert('Funcionário cadastrado com sucesso!');
-                document.getElementById('employeeForm').reset();
-            } else {
-                alert('Erro ao cadastrar funcionário.');
-            }
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/add-employee.js') }}"></script>
 </body>
 </html>

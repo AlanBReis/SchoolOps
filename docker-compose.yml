@@ -1,12 +1,13 @@
+version: '3'
 services:
   schoolops_db:
     image: postgres:latest
     restart: always
     env_file: 
-      - app\backend\.env
+      - app/backend/.env
     volumes:
       - postgres_schoolops:/var/lib/postgresql/data     
-      - ./app/backend/init.sql:/docker-entrypoint-initdb.d/init.sql  # Certifique-se do caminho
+      - ./app/backend/init.sql:/docker-entrypoint-initdb.d/init.sql 
 
   schoolops:
     restart: always
@@ -14,10 +15,14 @@ services:
     depends_on:
       - schoolops_db
     env_file:
-      - app\backend\.env
+      - app/backend/.env
     ports:
-      - "5001:5000"  
+      - "5001:5000"
     working_dir: /app/backend
+    volumes:
+      - ./app/backend:/app/backend 
+    environment:
+      - FLASK_ENV=development  
 
 volumes:
   postgres_schoolops:
