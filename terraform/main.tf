@@ -30,8 +30,8 @@ resource "aws_security_group" "allow_http_https_ssh" {
   }
 
   ingress {
-    from_port   = 443
-    to_port     = 443
+    from_port   = 5001
+    to_port     = 5001
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]  # Acesso HTTPS aberto
   }
@@ -51,7 +51,7 @@ resource "aws_security_group" "allow_http_https_ssh" {
 resource "aws_instance" "schoolops" {
   ami           = "ami-0866a3c8686eaeeba"  # Amazon Linux 2
   instance_type = "t2.micro"
-  key_name      = "devops-bootcamp"  # Usa a chave existente
+  key_name      = "devops-bootcamp"  
 
   vpc_security_group_ids = [aws_security_group.allow_http_https_ssh.id]
 

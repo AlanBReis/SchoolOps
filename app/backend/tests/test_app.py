@@ -19,4 +19,4 @@ def test_homepage_status(client):
 def test_homepage_template(client):
     """Testa se a rota '/' renderiza o template login.html."""
     response = client.get('/')
-    assert b'login' in response.data.lower()  # Verifica se a palavra 'login' está no HTML
+    assert b'login' in response.data.lower()  # Verifica a palavra login
