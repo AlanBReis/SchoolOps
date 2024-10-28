@@ -43,6 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    document.getElementById('voltar').addEventListener('click', function() {
+        window.location.href = 'index'; 
+    });
+    
+
     // Mostra/oculta a lista de professores quando o botão é clicado
     document.getElementById('showTeacherListButton').addEventListener('click', function() {
         const teacherList = document.getElementById('teacherList');

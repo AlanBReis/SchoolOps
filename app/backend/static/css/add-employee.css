@@ -1,12 +1,42 @@
-body {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@100;400&display=swap');
+
+.btn-voltar {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 20px;
+    background-color: #4c5baf;
+    color: white;
+    align-items: flex-start;
+    position: absolute;
+    top: 40px; /* Distância do topo */
+    left: 20px; 
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
+.btn-voltar:hover{
+    background-color: #5d6ab6;
+}
+
+button {
+    font-family: "Roboto", sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f0f0f5; 
+    color: rgb(13, 1, 80);
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #eaeaec; 
+}
+
+
+
+body {
+    font-family: "Roboto", sans-serif;
 }
 
 main {

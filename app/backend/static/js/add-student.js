@@ -43,6 +43,10 @@ async function atualizarLista() {
     }
 }
 
+document.getElementById('voltar').addEventListener('click', function() {
+    window.location.href = 'index'; 
+});
+
 // Mostra/oculta a lista de alunos quando o botão é clicado
 document.getElementById('showStudentListButton').addEventListener('click', function() {
     const studentList = document.getElementById('studentList');

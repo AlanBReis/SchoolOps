@@ -24,6 +24,11 @@ document.getElementById('employeeForm').addEventListener('submit', async functio
     }
 });
 
+document.getElementById('voltar').addEventListener('click', function() {
+    window.location.href = 'index'; //
+});
+
+
 // Função para atualizar a lista de funcionários
 async function atualizarLista() {
     const response = await fetch('http://localhost:5001/api/funcionarios');
