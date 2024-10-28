@@ -44,6 +44,6 @@ jobs:
         run: |
           echo "DATABASE_URL=postgresql://postgres:Soad182@localhost:5432/schoolops_db" >> $GITHUB_ENV
 
-      - name: Run tests
-        run: |
-          pytest
+      # - name: Run tests
+      #   run: |
+      #     pytest

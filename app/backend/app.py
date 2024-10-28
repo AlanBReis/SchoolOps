@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template
 from dotenv import load_dotenv
-from routes import bp  
+from routes import bp
 from flask_cors import CORS
 from flask import *
 from models import db, Aluno, Professor, Funcionario, User 
