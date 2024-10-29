@@ -1,4 +1,6 @@
-// Função para alternar entre login e registro
+// Simulação de um "banco de dados" local
+const usersDatabase = {};
+
 document.getElementById('registerToggle').addEventListener('click', function () {
     document.getElementById('loginContainer').style.display = 'none';
     document.getElementById('registerContainer').style.display = 'block';
@@ -16,12 +18,12 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    if (username && password) {
-        // Aqui você pode adicionar a lógica de autenticação real
-        // Exemplo: Redireciona para index.html se login for bem-sucedido
+    // Verifica se as credenciais estão corretas
+    if (usersDatabase[username] && usersDatabase[username] === password) {
+        // Redireciona para index.html se o login for bem-sucedido
         window.location.href = 'index';
     } else {
-        alert('Por favor, preencha todos os campos.');
+        alert('Usuário ou senha inválidos.');
     }
 });
 
@@ -33,8 +35,9 @@ document.getElementById('registerForm').addEventListener('submit', function (eve
     const newPassword = document.getElementById('newPassword').value;
 
     if (newUsername && newPassword) {
-        // Aqui você pode adicionar a lógica de registro no banco de dados
-        // Exemplo: Simular registro bem-sucedido
+        // Armazena o novo usuário no "banco de dados"
+        usersDatabase[newUsername] = newPassword;
+
         alert('Registro realizado com sucesso!');
 
         // Volta para a página de login
